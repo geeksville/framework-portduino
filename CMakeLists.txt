@@ -54,4 +54,5 @@ add_executable(Portduino
         src/simulated/SimCommon.cpp
         src/simulated/Utility.cpp
         src/simulated/Utility.h
-        src/simulated/SimHardwareSPI.cpp src/example/test.cpp)
+        src/simulated/SimHardwareSPI.cpp
+        example/test.cpp)

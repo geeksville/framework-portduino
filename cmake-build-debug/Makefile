@@ -278,6 +278,33 @@ cores/arduino/api/String.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/cores/arduino/api/String.cpp.s
 .PHONY : cores/arduino/api/String.cpp.s
 
+example/test.o: example/test.cpp.o
+
+.PHONY : example/test.o
+
+# target to build an object file
+example/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/example/test.cpp.o
+.PHONY : example/test.cpp.o
+
+example/test.i: example/test.cpp.i
+
+.PHONY : example/test.i
+
+# target to preprocess a source file
+example/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/example/test.cpp.i
+.PHONY : example/test.cpp.i
+
+example/test.s: example/test.cpp.s
+
+.PHONY : example/test.s
+
+# target to generate assembly for a file
+example/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/example/test.cpp.s
+.PHONY : example/test.cpp.s
+
 src/dtostrf.o: src/dtostrf.c.o
 
 .PHONY : src/dtostrf.o
@@ -304,33 +331,6 @@ src/dtostrf.s: src/dtostrf.c.s
 src/dtostrf.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/dtostrf.c.s
 .PHONY : src/dtostrf.c.s
-
-src/example/test.o: src/example/test.cpp.o
-
-.PHONY : src/example/test.o
-
-# target to build an object file
-src/example/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/example/test.cpp.o
-.PHONY : src/example/test.cpp.o
-
-src/example/test.i: src/example/test.cpp.i
-
-.PHONY : src/example/test.i
-
-# target to preprocess a source file
-src/example/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/example/test.cpp.i
-.PHONY : src/example/test.cpp.i
-
-src/example/test.s: src/example/test.cpp.s
-
-.PHONY : src/example/test.s
-
-# target to generate assembly for a file
-src/example/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/example/test.cpp.s
-.PHONY : src/example/test.cpp.s
 
 src/itoa.o: src/itoa.cpp.o
 
@@ -518,12 +518,12 @@ help:
 	@echo "... cores/arduino/api/String.o"
 	@echo "... cores/arduino/api/String.i"
 	@echo "... cores/arduino/api/String.s"
+	@echo "... example/test.o"
+	@echo "... example/test.i"
+	@echo "... example/test.s"
 	@echo "... src/dtostrf.o"
 	@echo "... src/dtostrf.i"
 	@echo "... src/dtostrf.s"
-	@echo "... src/example/test.o"
-	@echo "... src/example/test.i"
-	@echo "... src/example/test.s"
 	@echo "... src/itoa.o"
 	@echo "... src/itoa.i"
 	@echo "... src/itoa.s"

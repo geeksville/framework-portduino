@@ -6,9 +6,18 @@
 
 #define TEST_PIN 7
 
+static SPISettings spiSettings(4000000, MSBFIRST, SPI_MODE0);
+
 void setup(void) {
     pinMode(TEST_PIN, OUTPUT);
     digitalWrite(TEST_PIN, LOW);
+
+    SPI.begin();
+
+    SPI.beginTransaction(spiSettings);
+    uint8_t testBuf[4];
+    SPI.transfer(testBuf, sizeof(testBuf));
+    SPI.endTransaction();
 }
 
 void loop(void) {

@@ -197,13 +197,13 @@
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/itoa.h">
 			<Option target="Portduino"/>
 		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/example/test.cpp">
+			<Option target="Portduino"/>
+		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/Arduino.h">
 			<Option target="Portduino"/>
 		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/dtostrf.c">
-			<Option target="Portduino"/>
-		</Unit>
-		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/example/test.cpp">
 			<Option target="Portduino"/>
 		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/itoa.cpp">

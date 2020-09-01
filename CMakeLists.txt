@@ -4,6 +4,7 @@ project(Portduino)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(cores/arduino/api)
+include_directories(src)
 
 add_executable(Portduino
         cores/arduino/api/deprecated/Client.h
@@ -45,6 +46,12 @@ add_executable(Portduino
         cores/arduino/api/Udp.h
         cores/arduino/api/USBAPI.h
         cores/arduino/api/WCharacter.h
+        src/Arduino.h
         src/itoa.cpp
         src/dtostrf.c
-        src/main.cpp src/linux/millis.cpp src/simulated/SimCommon.cpp src/simulated/Utility.cpp src/simulated/Utility.h src/simulated/SimHardwareSPI.cpp)
+        src/main.cpp
+        src/linux/millis.cpp
+        src/simulated/SimCommon.cpp
+        src/simulated/Utility.cpp
+        src/simulated/Utility.h
+        src/simulated/SimHardwareSPI.cpp src/example/test.cpp)

@@ -28,5 +28,5 @@ namespace arduino {
 
      void HardwareSPI::begin() NOT_IMPLEMENTED("begin")
      void HardwareSPI::end() NOT_IMPLEMENTED("end")
-     
+
 }

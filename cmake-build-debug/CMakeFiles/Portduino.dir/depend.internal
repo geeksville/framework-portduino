@@ -49,6 +49,16 @@ CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o
  ../cores/arduino/api/Common.h
  /home/kevinh/development/meshtastic/Portduino/src/simulated/SimCommon.cpp
  /home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o
+ ../cores/arduino/api/Common.h
+ ../cores/arduino/api/HardwareSPI.h
+ ../cores/arduino/api/Print.h
+ ../cores/arduino/api/Printable.h
+ ../cores/arduino/api/Stream.h
+ ../cores/arduino/api/String.h
+ ../cores/arduino/api/deprecated-avr-comp/avr/pgmspace.h
+ /home/kevinh/development/meshtastic/Portduino/src/simulated/SimHardwareSPI.cpp
+ /home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h
 CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.o
  /home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.cpp
  /home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h

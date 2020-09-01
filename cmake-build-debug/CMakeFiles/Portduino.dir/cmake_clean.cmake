@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Portduino.dir/src/linux/millis.cpp.o"
   "CMakeFiles/Portduino.dir/src/main.cpp.o"
   "CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o"
+  "CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o"
   "CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.o"
   "Portduino"
   "Portduino.pdb"

@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp" "/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles/Portduino.dir/src/linux/millis.cpp.o"
   "/home/kevinh/development/meshtastic/Portduino/src/main.cpp" "/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles/Portduino.dir/src/main.cpp.o"
   "/home/kevinh/development/meshtastic/Portduino/src/simulated/SimCommon.cpp" "/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o"
+  "/home/kevinh/development/meshtastic/Portduino/src/simulated/SimHardwareSPI.cpp" "/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o"
   "/home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.cpp" "/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -49,6 +49,16 @@ CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o: ../cores/arduino/api/Com
 CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o: ../src/simulated/SimCommon.cpp
 CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o: ../src/simulated/Utility.h
 
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../cores/arduino/api/Common.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../cores/arduino/api/HardwareSPI.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../cores/arduino/api/Print.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../cores/arduino/api/Printable.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../cores/arduino/api/Stream.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../cores/arduino/api/String.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../cores/arduino/api/deprecated-avr-comp/avr/pgmspace.h
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../src/simulated/SimHardwareSPI.cpp
+CMakeFiles/Portduino.dir/src/simulated/SimHardwareSPI.cpp.o: ../src/simulated/Utility.h
+
 CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.o: ../src/simulated/Utility.cpp
 CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.o: ../src/simulated/Utility.h
 

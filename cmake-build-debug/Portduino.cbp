@@ -210,6 +210,9 @@
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/simulated/SimCommon.cpp">
 			<Option target="Portduino"/>
 		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/simulated/SimHardwareSPI.cpp">
+			<Option target="Portduino"/>
+		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.cpp">
 			<Option target="Portduino"/>
 		</Unit>

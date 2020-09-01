@@ -1,6 +1,6 @@
 # Portduino
 
-This is an experiment with getting the arduino API so that it can run on top of the Linux OS
+This is an experiment with getting the Arduino API so that it can run on top of the Linux OS.
 
 You don't want this yet ;-)
 
@@ -23,6 +23,22 @@ I'm going to implement the arduino libs/API layer and support the following devi
 
 Eventually a variant of this library will allow removing SoftDevice from the NRF52 targets - for a dramatic flash/RAM savings (this will be built on top of [Apache MyNewt](https://mynewt.apache.org/))
 
-## TODO
+## TODO (short term)
 
 - Use https://github.com/arduino/ArduinoCore-nRF528x-mbedos as a model?
+- Get hello world building as an app
+- Add SimGPIO
+- Add SimSPI
+- Add SimI2C
+- Build and run Meshtastic on top of this new framework
+- Add CS341SPI driver (USB to SPI chip)
+- Implement InterruptHandler via threads
+- Have meshtastic talk to radio over that chip
+
+## TODO (long term)
+
+- Announce and request feedback
+- Change into an actual real platformio "framework"
+- Send in platformio PR
+- Make a variant that runs on top of MyNewt
+- Unify Threading wrappers with the FreeRTOS versions

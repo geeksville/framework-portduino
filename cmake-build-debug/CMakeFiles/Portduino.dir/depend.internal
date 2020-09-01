@@ -45,3 +45,10 @@ CMakeFiles/Portduino.dir/src/linux/millis.cpp.o
  /home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp
 CMakeFiles/Portduino.dir/src/main.cpp.o
  /home/kevinh/development/meshtastic/Portduino/src/main.cpp
+CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o
+ ../cores/arduino/api/Common.h
+ /home/kevinh/development/meshtastic/Portduino/src/simulated/SimCommon.cpp
+ /home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h
+CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.o
+ /home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.cpp
+ /home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h

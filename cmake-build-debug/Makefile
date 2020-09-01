@@ -386,6 +386,60 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/simulated/SimCommon.o: src/simulated/SimCommon.cpp.o
+
+.PHONY : src/simulated/SimCommon.o
+
+# target to build an object file
+src/simulated/SimCommon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.o
+.PHONY : src/simulated/SimCommon.cpp.o
+
+src/simulated/SimCommon.i: src/simulated/SimCommon.cpp.i
+
+.PHONY : src/simulated/SimCommon.i
+
+# target to preprocess a source file
+src/simulated/SimCommon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.i
+.PHONY : src/simulated/SimCommon.cpp.i
+
+src/simulated/SimCommon.s: src/simulated/SimCommon.cpp.s
+
+.PHONY : src/simulated/SimCommon.s
+
+# target to generate assembly for a file
+src/simulated/SimCommon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.s
+.PHONY : src/simulated/SimCommon.cpp.s
+
+src/simulated/Utility.o: src/simulated/Utility.cpp.o
+
+.PHONY : src/simulated/Utility.o
+
+# target to build an object file
+src/simulated/Utility.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.o
+.PHONY : src/simulated/Utility.cpp.o
+
+src/simulated/Utility.i: src/simulated/Utility.cpp.i
+
+.PHONY : src/simulated/Utility.i
+
+# target to preprocess a source file
+src/simulated/Utility.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.i
+.PHONY : src/simulated/Utility.cpp.i
+
+src/simulated/Utility.s: src/simulated/Utility.cpp.s
+
+.PHONY : src/simulated/Utility.s
+
+# target to generate assembly for a file
+src/simulated/Utility.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/Utility.cpp.s
+.PHONY : src/simulated/Utility.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -422,6 +476,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/simulated/SimCommon.o"
+	@echo "... src/simulated/SimCommon.i"
+	@echo "... src/simulated/SimCommon.s"
+	@echo "... src/simulated/Utility.o"
+	@echo "... src/simulated/Utility.i"
+	@echo "... src/simulated/Utility.s"
 .PHONY : help
 
 

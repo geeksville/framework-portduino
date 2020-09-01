@@ -207,6 +207,15 @@
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/main.cpp">
 			<Option target="Portduino"/>
 		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/simulated/SimCommon.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h">
+			<Option target="Portduino"/>
+		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -47,4 +47,4 @@ add_executable(Portduino
         cores/arduino/api/WCharacter.h
         src/itoa.cpp
         src/dtostrf.c
-        src/main.cpp src/linux/millis.cpp)
+        src/main.cpp src/linux/millis.cpp src/simulated/SimCommon.cpp src/simulated/Utility.cpp src/simulated/Utility.h)

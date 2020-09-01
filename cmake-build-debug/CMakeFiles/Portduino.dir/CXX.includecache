@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp
-sys/time.h
+../cores/arduino/api/Common.h
+stdint.h
 -
-stdlib.h
--
+
+/home/kevinh/development/meshtastic/Portduino/src/simulated/SimCommon.cpp
+Common.h
+/home/kevinh/development/meshtastic/Portduino/src/simulated/Common.h
+Utility.h
+/home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h
+
+/home/kevinh/development/meshtastic/Portduino/src/simulated/Utility.h
 

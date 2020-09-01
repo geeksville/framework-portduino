@@ -45,9 +45,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api"/>
-					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated"/>
-					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp"/>
-					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp/avr"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -71,9 +68,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api"/>
-					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated"/>
-					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp"/>
-					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp/avr"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -199,6 +193,15 @@
 			<Option target="Portduino"/>
 		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/itoa.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/dtostrf.c">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/itoa.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp">
 			<Option target="Portduino"/>
 		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/main.cpp">

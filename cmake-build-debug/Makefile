@@ -278,6 +278,87 @@ cores/arduino/api/String.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/cores/arduino/api/String.cpp.s
 .PHONY : cores/arduino/api/String.cpp.s
 
+src/dtostrf.o: src/dtostrf.c.o
+
+.PHONY : src/dtostrf.o
+
+# target to build an object file
+src/dtostrf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/dtostrf.c.o
+.PHONY : src/dtostrf.c.o
+
+src/dtostrf.i: src/dtostrf.c.i
+
+.PHONY : src/dtostrf.i
+
+# target to preprocess a source file
+src/dtostrf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/dtostrf.c.i
+.PHONY : src/dtostrf.c.i
+
+src/dtostrf.s: src/dtostrf.c.s
+
+.PHONY : src/dtostrf.s
+
+# target to generate assembly for a file
+src/dtostrf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/dtostrf.c.s
+.PHONY : src/dtostrf.c.s
+
+src/itoa.o: src/itoa.cpp.o
+
+.PHONY : src/itoa.o
+
+# target to build an object file
+src/itoa.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/itoa.cpp.o
+.PHONY : src/itoa.cpp.o
+
+src/itoa.i: src/itoa.cpp.i
+
+.PHONY : src/itoa.i
+
+# target to preprocess a source file
+src/itoa.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/itoa.cpp.i
+.PHONY : src/itoa.cpp.i
+
+src/itoa.s: src/itoa.cpp.s
+
+.PHONY : src/itoa.s
+
+# target to generate assembly for a file
+src/itoa.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/itoa.cpp.s
+.PHONY : src/itoa.cpp.s
+
+src/linux/millis.o: src/linux/millis.cpp.o
+
+.PHONY : src/linux/millis.o
+
+# target to build an object file
+src/linux/millis.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/millis.cpp.o
+.PHONY : src/linux/millis.cpp.o
+
+src/linux/millis.i: src/linux/millis.cpp.i
+
+.PHONY : src/linux/millis.i
+
+# target to preprocess a source file
+src/linux/millis.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/millis.cpp.i
+.PHONY : src/linux/millis.cpp.i
+
+src/linux/millis.s: src/linux/millis.cpp.s
+
+.PHONY : src/linux/millis.s
+
+# target to generate assembly for a file
+src/linux/millis.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/millis.cpp.s
+.PHONY : src/linux/millis.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -329,6 +410,15 @@ help:
 	@echo "... cores/arduino/api/String.o"
 	@echo "... cores/arduino/api/String.i"
 	@echo "... cores/arduino/api/String.s"
+	@echo "... src/dtostrf.o"
+	@echo "... src/dtostrf.i"
+	@echo "... src/dtostrf.s"
+	@echo "... src/itoa.o"
+	@echo "... src/itoa.i"
+	@echo "... src/itoa.s"
+	@echo "... src/linux/millis.o"
+	@echo "... src/linux/millis.i"
+	@echo "... src/linux/millis.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

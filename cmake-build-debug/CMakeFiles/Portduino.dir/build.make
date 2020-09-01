@@ -142,9 +142,35 @@ CMakeFiles/Portduino.dir/cores/arduino/api/String.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Portduino.dir/cores/arduino/api/String.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevinh/development/meshtastic/Portduino/cores/arduino/api/String.cpp -o CMakeFiles/Portduino.dir/cores/arduino/api/String.cpp.s
 
+CMakeFiles/Portduino.dir/src/itoa.cpp.o: CMakeFiles/Portduino.dir/flags.make
+CMakeFiles/Portduino.dir/src/itoa.cpp.o: ../src/itoa.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Portduino.dir/src/itoa.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Portduino.dir/src/itoa.cpp.o -c /home/kevinh/development/meshtastic/Portduino/src/itoa.cpp
+
+CMakeFiles/Portduino.dir/src/itoa.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Portduino.dir/src/itoa.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kevinh/development/meshtastic/Portduino/src/itoa.cpp > CMakeFiles/Portduino.dir/src/itoa.cpp.i
+
+CMakeFiles/Portduino.dir/src/itoa.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Portduino.dir/src/itoa.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevinh/development/meshtastic/Portduino/src/itoa.cpp -o CMakeFiles/Portduino.dir/src/itoa.cpp.s
+
+CMakeFiles/Portduino.dir/src/dtostrf.c.o: CMakeFiles/Portduino.dir/flags.make
+CMakeFiles/Portduino.dir/src/dtostrf.c.o: ../src/dtostrf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Portduino.dir/src/dtostrf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Portduino.dir/src/dtostrf.c.o   -c /home/kevinh/development/meshtastic/Portduino/src/dtostrf.c
+
+CMakeFiles/Portduino.dir/src/dtostrf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Portduino.dir/src/dtostrf.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kevinh/development/meshtastic/Portduino/src/dtostrf.c > CMakeFiles/Portduino.dir/src/dtostrf.c.i
+
+CMakeFiles/Portduino.dir/src/dtostrf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Portduino.dir/src/dtostrf.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kevinh/development/meshtastic/Portduino/src/dtostrf.c -o CMakeFiles/Portduino.dir/src/dtostrf.c.s
+
 CMakeFiles/Portduino.dir/src/main.cpp.o: CMakeFiles/Portduino.dir/flags.make
 CMakeFiles/Portduino.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Portduino.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Portduino.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Portduino.dir/src/main.cpp.o -c /home/kevinh/development/meshtastic/Portduino/src/main.cpp
 
 CMakeFiles/Portduino.dir/src/main.cpp.i: cmake_force
@@ -155,6 +181,19 @@ CMakeFiles/Portduino.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Portduino.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevinh/development/meshtastic/Portduino/src/main.cpp -o CMakeFiles/Portduino.dir/src/main.cpp.s
 
+CMakeFiles/Portduino.dir/src/linux/millis.cpp.o: CMakeFiles/Portduino.dir/flags.make
+CMakeFiles/Portduino.dir/src/linux/millis.cpp.o: ../src/linux/millis.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Portduino.dir/src/linux/millis.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Portduino.dir/src/linux/millis.cpp.o -c /home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp
+
+CMakeFiles/Portduino.dir/src/linux/millis.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Portduino.dir/src/linux/millis.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp > CMakeFiles/Portduino.dir/src/linux/millis.cpp.i
+
+CMakeFiles/Portduino.dir/src/linux/millis.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Portduino.dir/src/linux/millis.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp -o CMakeFiles/Portduino.dir/src/linux/millis.cpp.s
+
 # Object files for target Portduino
 Portduino_OBJECTS = \
 "CMakeFiles/Portduino.dir/cores/arduino/api/Common.cpp.o" \
@@ -162,7 +201,10 @@ Portduino_OBJECTS = \
 "CMakeFiles/Portduino.dir/cores/arduino/api/Print.cpp.o" \
 "CMakeFiles/Portduino.dir/cores/arduino/api/Stream.cpp.o" \
 "CMakeFiles/Portduino.dir/cores/arduino/api/String.cpp.o" \
-"CMakeFiles/Portduino.dir/src/main.cpp.o"
+"CMakeFiles/Portduino.dir/src/itoa.cpp.o" \
+"CMakeFiles/Portduino.dir/src/dtostrf.c.o" \
+"CMakeFiles/Portduino.dir/src/main.cpp.o" \
+"CMakeFiles/Portduino.dir/src/linux/millis.cpp.o"
 
 # External object files for target Portduino
 Portduino_EXTERNAL_OBJECTS =
@@ -172,10 +214,13 @@ Portduino: CMakeFiles/Portduino.dir/cores/arduino/api/IPAddress.cpp.o
 Portduino: CMakeFiles/Portduino.dir/cores/arduino/api/Print.cpp.o
 Portduino: CMakeFiles/Portduino.dir/cores/arduino/api/Stream.cpp.o
 Portduino: CMakeFiles/Portduino.dir/cores/arduino/api/String.cpp.o
+Portduino: CMakeFiles/Portduino.dir/src/itoa.cpp.o
+Portduino: CMakeFiles/Portduino.dir/src/dtostrf.c.o
 Portduino: CMakeFiles/Portduino.dir/src/main.cpp.o
+Portduino: CMakeFiles/Portduino.dir/src/linux/millis.cpp.o
 Portduino: CMakeFiles/Portduino.dir/build.make
 Portduino: CMakeFiles/Portduino.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Portduino"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Portduino"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Portduino.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

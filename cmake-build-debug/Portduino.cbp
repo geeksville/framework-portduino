@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Portduino"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/kevinh/development/meshtastic/Portduino/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/kevinh/development/meshtastic/Portduino/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/kevinh/development/meshtastic/Portduino/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Portduino">
+				<Option output="/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Portduino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kevinh/development/meshtastic/Portduino/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api"/>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated"/>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp"/>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp/avr"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 Portduino"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Portduino/fast">
+				<Option output="/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Portduino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kevinh/development/meshtastic/Portduino/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api"/>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated"/>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp"/>
+					<Add directory="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp/avr"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 Portduino/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kevinh/development/meshtastic/Portduino/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/ArduinoAPI.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Binary.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Client.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Common.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Common.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Compat.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/HardwareI2C.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/HardwareSPI.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/HardwareSerial.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/IPAddress.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/IPAddress.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Interrupts.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Print.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Print.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Printable.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/RingBuffer.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Server.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Stream.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Stream.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/String.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/String.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/USBAPI.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/Udp.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/WCharacter.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp/avr/dtostrf.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp/avr/interrupt.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated-avr-comp/avr/pgmspace.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/Client.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/HardwareSerial.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/IPAddress.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/Print.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/Printable.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/Server.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/Stream.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/Udp.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/deprecated/WString.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/cores/arduino/api/itoa.h">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/main.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

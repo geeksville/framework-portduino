@@ -55,4 +55,4 @@ add_executable(Portduino
         src/simulated/Utility.cpp
         src/simulated/Utility.h
         src/simulated/SimHardwareSPI.cpp
-        example/test.cpp src/simulated/SimHardwareI2C.cpp src/simulated/SimHardwareI2C.h)
+        example/test.cpp src/simulated/SimHardwareI2C.cpp src/simulated/SimHardwareI2C.h src/linux/LinuxCommon.cpp)

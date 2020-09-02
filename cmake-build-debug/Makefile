@@ -359,6 +359,33 @@ src/itoa.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/itoa.cpp.s
 .PHONY : src/itoa.cpp.s
 
+src/linux/LinuxCommon.o: src/linux/LinuxCommon.cpp.o
+
+.PHONY : src/linux/LinuxCommon.o
+
+# target to build an object file
+src/linux/LinuxCommon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/LinuxCommon.cpp.o
+.PHONY : src/linux/LinuxCommon.cpp.o
+
+src/linux/LinuxCommon.i: src/linux/LinuxCommon.cpp.i
+
+.PHONY : src/linux/LinuxCommon.i
+
+# target to preprocess a source file
+src/linux/LinuxCommon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/LinuxCommon.cpp.i
+.PHONY : src/linux/LinuxCommon.cpp.i
+
+src/linux/LinuxCommon.s: src/linux/LinuxCommon.cpp.s
+
+.PHONY : src/linux/LinuxCommon.s
+
+# target to generate assembly for a file
+src/linux/LinuxCommon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/LinuxCommon.cpp.s
+.PHONY : src/linux/LinuxCommon.cpp.s
+
 src/linux/millis.o: src/linux/millis.cpp.o
 
 .PHONY : src/linux/millis.o
@@ -554,6 +581,9 @@ help:
 	@echo "... src/itoa.o"
 	@echo "... src/itoa.i"
 	@echo "... src/itoa.s"
+	@echo "... src/linux/LinuxCommon.o"
+	@echo "... src/linux/LinuxCommon.i"
+	@echo "... src/linux/LinuxCommon.s"
 	@echo "... src/linux/millis.o"
 	@echo "... src/linux/millis.i"
 	@echo "... src/linux/millis.s"

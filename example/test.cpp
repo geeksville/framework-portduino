@@ -18,6 +18,12 @@ void setup(void) {
     uint8_t testBuf[4];
     SPI.transfer(testBuf, sizeof(testBuf));
     SPI.endTransaction();
+
+    Wire.begin();
+
+    Wire.beginTransmission(0x55);
+    Wire.write(5);
+    Wire.endTransmission();
 }
 
 void loop(void) {

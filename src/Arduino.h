@@ -2,6 +2,7 @@
 
 #include "ArduinoAPI.h"
 #include "HardwareSPI.h"
+#include "simulated/SimHardwareI2C.h"
 
 extern HardwareSPI SPI;
 

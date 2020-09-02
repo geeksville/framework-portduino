@@ -25,11 +25,12 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 
 ## TODO (short term)
 
-- Use https://github.com/arduino/ArduinoCore-nRF528x-mbedos as a model?
-- Get hello world building as an app
-- Add SimGPIO
-- Add SimSPI
-- Add SimI2C
+- DONE Use https://github.com/arduino/ArduinoCore-nRF528x-mbedos as a model?
+- DONE Get hello world building as an app
+- DONE Add SimGPIO
+- DONE Add SimSPI
+- DONE Add SimI2C
+- Add Serial
 - Build and run Meshtastic on top of this new framework
 - Add CS341SPI driver (USB to SPI chip)
 - Implement InterruptHandler via threads

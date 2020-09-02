@@ -440,6 +440,33 @@ src/simulated/SimCommon.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/SimCommon.cpp.s
 .PHONY : src/simulated/SimCommon.cpp.s
 
+src/simulated/SimHardwareI2C.o: src/simulated/SimHardwareI2C.cpp.o
+
+.PHONY : src/simulated/SimHardwareI2C.o
+
+# target to build an object file
+src/simulated/SimHardwareI2C.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/SimHardwareI2C.cpp.o
+.PHONY : src/simulated/SimHardwareI2C.cpp.o
+
+src/simulated/SimHardwareI2C.i: src/simulated/SimHardwareI2C.cpp.i
+
+.PHONY : src/simulated/SimHardwareI2C.i
+
+# target to preprocess a source file
+src/simulated/SimHardwareI2C.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/SimHardwareI2C.cpp.i
+.PHONY : src/simulated/SimHardwareI2C.cpp.i
+
+src/simulated/SimHardwareI2C.s: src/simulated/SimHardwareI2C.cpp.s
+
+.PHONY : src/simulated/SimHardwareI2C.s
+
+# target to generate assembly for a file
+src/simulated/SimHardwareI2C.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/simulated/SimHardwareI2C.cpp.s
+.PHONY : src/simulated/SimHardwareI2C.cpp.s
+
 src/simulated/SimHardwareSPI.o: src/simulated/SimHardwareSPI.cpp.o
 
 .PHONY : src/simulated/SimHardwareSPI.o
@@ -536,6 +563,9 @@ help:
 	@echo "... src/simulated/SimCommon.o"
 	@echo "... src/simulated/SimCommon.i"
 	@echo "... src/simulated/SimCommon.s"
+	@echo "... src/simulated/SimHardwareI2C.o"
+	@echo "... src/simulated/SimHardwareI2C.i"
+	@echo "... src/simulated/SimHardwareI2C.s"
 	@echo "... src/simulated/SimHardwareSPI.o"
 	@echo "... src/simulated/SimHardwareSPI.i"
 	@echo "... src/simulated/SimHardwareSPI.s"

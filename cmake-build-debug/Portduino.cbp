@@ -212,6 +212,12 @@
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/linux/LinuxCommon.cpp">
 			<Option target="Portduino"/>
 		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/linux/LinuxSerial.cpp">
+			<Option target="Portduino"/>
+		</Unit>
+		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/linux/LinuxSerial.h">
+			<Option target="Portduino"/>
+		</Unit>
 		<Unit filename="/home/kevinh/development/meshtastic/Portduino/src/linux/millis.cpp">
 			<Option target="Portduino"/>
 		</Unit>

@@ -7,7 +7,7 @@
 static long loopDelay = 100;
 
 int main(int argc, const char **argv) {
-  printf("hello world\n");
+  printf("Portduino is starting\n");
   setup();
   while(true) {
       loop();

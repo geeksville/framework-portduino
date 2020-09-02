@@ -9,6 +9,10 @@
 static SPISettings spiSettings(4000000, MSBFIRST, SPI_MODE0);
 
 void setup(void) {
+    Serial.begin(115200);
+
+    Serial.println("Starting Portduino test");
+
     pinMode(TEST_PIN, OUTPUT);
     digitalWrite(TEST_PIN, LOW);
 
@@ -24,6 +28,8 @@ void setup(void) {
     Wire.beginTransmission(0x55);
     Wire.write(5);
     Wire.endTransmission();
+
+    Serial.println("Done with setup");
 }
 
 void loop(void) {

@@ -32,6 +32,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - DONE Add SimI2C
 - Add Serial
 - Build and run Meshtastic on top of this new framework
+- Allow multiple GPIO implementations (on a per GPIO basis) - lets user mix and max sim pins, with motherboard pins, with USB pins
 - Add CS341SPI driver (USB to SPI chip)
 - Implement InterruptHandler via threads
 - Have meshtastic talk to radio over that chip
@@ -41,5 +42,6 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Announce and request feedback
 - Change into an actual real platformio "framework"
 - Send in platformio PR
+- Let LinuxSerial go places other than stdout
 - Make a variant that runs on top of MyNewt
 - Unify Threading wrappers with the FreeRTOS versions

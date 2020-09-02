@@ -386,6 +386,33 @@ src/linux/LinuxCommon.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/LinuxCommon.cpp.s
 .PHONY : src/linux/LinuxCommon.cpp.s
 
+src/linux/LinuxSerial.o: src/linux/LinuxSerial.cpp.o
+
+.PHONY : src/linux/LinuxSerial.o
+
+# target to build an object file
+src/linux/LinuxSerial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/LinuxSerial.cpp.o
+.PHONY : src/linux/LinuxSerial.cpp.o
+
+src/linux/LinuxSerial.i: src/linux/LinuxSerial.cpp.i
+
+.PHONY : src/linux/LinuxSerial.i
+
+# target to preprocess a source file
+src/linux/LinuxSerial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/LinuxSerial.cpp.i
+.PHONY : src/linux/LinuxSerial.cpp.i
+
+src/linux/LinuxSerial.s: src/linux/LinuxSerial.cpp.s
+
+.PHONY : src/linux/LinuxSerial.s
+
+# target to generate assembly for a file
+src/linux/LinuxSerial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Portduino.dir/build.make CMakeFiles/Portduino.dir/src/linux/LinuxSerial.cpp.s
+.PHONY : src/linux/LinuxSerial.cpp.s
+
 src/linux/millis.o: src/linux/millis.cpp.o
 
 .PHONY : src/linux/millis.o
@@ -584,6 +611,9 @@ help:
 	@echo "... src/linux/LinuxCommon.o"
 	@echo "... src/linux/LinuxCommon.i"
 	@echo "... src/linux/LinuxCommon.s"
+	@echo "... src/linux/LinuxSerial.o"
+	@echo "... src/linux/LinuxSerial.i"
+	@echo "... src/linux/LinuxSerial.s"
 	@echo "... src/linux/millis.o"
 	@echo "... src/linux/millis.i"
 	@echo "... src/linux/millis.s"

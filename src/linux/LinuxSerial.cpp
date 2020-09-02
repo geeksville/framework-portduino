@@ -4,6 +4,8 @@
 
 #include "LinuxSerial.h"
 
+#include <stdio.h>
+
 namespace arduino {
     LinuxSerial Serial;
 
@@ -21,22 +23,23 @@ namespace arduino {
     }
 
     int LinuxSerial::peek(void) {
-        return 0;
+        return -1;
     }
 
     int LinuxSerial::read(void) {
-        return 0;
+        return -1;
     }
 
     void LinuxSerial::flush(void) {
-
     }
 
-    size_t LinuxSerial::write(uint8_t) {
+    size_t LinuxSerial::write(uint8_t c) {
+        putchar(c);
         return 1;
     }
 
     LinuxSerial::operator bool() {
-        return false;
+        // Returns true if the port is ready for use
+        return true;
     }
 }

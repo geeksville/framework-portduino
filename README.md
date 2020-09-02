@@ -30,7 +30,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - DONE Add SimGPIO
 - DONE Add SimSPI
 - DONE Add SimI2C
-- Add Serial
+- DONE Add Serial
 - Build and run Meshtastic on top of this new framework
 - Allow multiple GPIO implementations (on a per GPIO basis) - lets user mix and max sim pins, with motherboard pins, with USB pins
 - Add CS341SPI driver (USB to SPI chip)

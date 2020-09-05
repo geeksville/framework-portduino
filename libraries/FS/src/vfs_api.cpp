@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "vfs_api.h"
+#include "logging.h"
 
 using namespace fs;
 
@@ -244,7 +245,7 @@ VFSFileImpl::VFSFileImpl(VFSImpl* fs, const char* path, const char* mode)
                 log_e("opendir(%s) failed", temp);
             }
         } else {
-            log_e("Unknown type 0x%08X for file %s", ((_stat.st_mode)&_IFMT), temp);
+            log_e("Unknown type 0x%08X for file %s", ((_stat.st_mode)&S_IFMT), temp);
         }
     } else {
         //file not found

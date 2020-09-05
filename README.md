@@ -35,6 +35,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Implement Thread and Lock
 - Implement Interrupt dispatching
 - Implement FS
+- Change PORTDUINO def to PORTDUINO and PORTDUINO_Linux_x86_64
 - Allow multiple GPIO implementations (on a per GPIO basis) - lets user mix and max sim pins, with motherboard pins, with USB pins
 - Add CS341SPI driver (USB to SPI chip)
 - Implement InterruptHandler via threads
@@ -47,4 +48,4 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Send in platformio PR
 - Let LinuxSerial go places other than stdout
 - Make a variant that runs on top of MyNewt
-- Unify Threading wrappers with the FreeRTOS versions
+- Unify Thread/Semaphore/TypedQueue wrappers with the FreeRTOS versions

@@ -2,4 +2,4 @@
 
 #include "vfs_api.h"
 
-extern VFSImpl PortduinoFS;
+extern fs::FS PortduinoFS;

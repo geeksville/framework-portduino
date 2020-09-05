@@ -34,6 +34,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Build and run Meshtastic on top of this new framework
 - Implement Thread and Lock
 - Implement Interrupt dispatching
+- Implement FS
 - Allow multiple GPIO implementations (on a per GPIO basis) - lets user mix and max sim pins, with motherboard pins, with USB pins
 - Add CS341SPI driver (USB to SPI chip)
 - Implement InterruptHandler via threads

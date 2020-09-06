@@ -1,7 +1,7 @@
 #include "logging.h"
 #include "Utility.h"
 
-
+#include <Arduino.h>
 
 void log(LogSystem sys, LogLevel level, const char *fmt, ...) {
   va_list args;
@@ -11,7 +11,10 @@ void log(LogSystem sys, LogLevel level, const char *fmt, ...) {
 }
 
 void log(LogSystem sys, LogLevel level, const char *fmt, va_list args) {
-  notImplemented("log");
+  char buf[256]; // FIXME - this takes up lots of stack space
+  vsnprintf(buf, sizeof(buf), fmt, args);
+  Serial.write(buf);
+  Serial.write('\n'); // FIXME make logging smarter
 }
 
 void log_e(const char *fmt, ...) {

@@ -21,9 +21,9 @@ enum ResultI2c {
 
 class SimHardwareI2C : public HardwareI2C {
 public:
-  virtual void begin() NOT_IMPLEMENTED("begin");
+  virtual void begin() NOT_IMPLEMENTED("i2cbegin");
 
-  virtual void begin(uint8_t address) NOT_IMPLEMENTED("begin");
+  virtual void begin(uint8_t address) NOT_IMPLEMENTED("i2cslave begin");
 
   virtual void end() NOT_IMPLEMENTED("end");
 
@@ -58,7 +58,7 @@ public:
 
   virtual size_t write(uint8_t) {
     notImplemented("writei2c");
-    FIXME implement return 0;
+    return 0;
   }
 
   virtual size_t write(const uint8_t *buffer, size_t size) {

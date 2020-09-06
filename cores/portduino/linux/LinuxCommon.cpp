@@ -5,6 +5,8 @@
 #include "Common.h"
 #include "Utility.h"
 
+#include <sched.h>
+#include <stdlib.h>
 #include <time.h>
 
 void delay(unsigned long milliSec) {
@@ -19,16 +21,13 @@ void delayMicroseconds(unsigned int usec) {
   nanosleep(&ts, NULL);
 }
 
-void yield(void) { notImplemented("yield"); }
+void yield(void) { sched_yield(); }
 
 long random(long max) { return random(0, max); }
 
-long random(long min, long max) {
-  notImplemented("random");
-  return 0L;
-}
+long random(long min, long max) { return rand() % (max - min) + min; }
 
-void randomSeed(unsigned long) { notImplemented("randseed"); }
+void randomSeed(unsigned long s) { srand(s); }
 
 void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
     NOT_IMPLEMENTED("tone");

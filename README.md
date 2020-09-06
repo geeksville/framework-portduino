@@ -32,6 +32,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - DONE Add SimI2C
 - DONE Add Serial
 - Build and run Meshtastic on top of this new framework
+- Implement random
 - Implement Thread and Lock
 - Implement Interrupt dispatching
 - Implement FS

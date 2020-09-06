@@ -11,8 +11,8 @@ int main(int argc, const char **argv) {
   printf("Portduino is starting\n");
 
   String fsroot("/tmp/portduinofs");
-  mkdir(fsroot, 0);
-  PortduinoFS.mountpoint(fsroot);
+  mkdir(fsroot.c_str(), 0777);
+  portduinoVFS.mountpoint(fsroot.c_str());
 
   setup();
   while (true) {

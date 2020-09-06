@@ -25,9 +25,9 @@ public:
 
   virtual void begin(uint8_t address) NOT_IMPLEMENTED("i2cslave begin");
 
-  virtual void end() NOT_IMPLEMENTED("end");
+  virtual void end() NOT_IMPLEMENTED("i2cend");
 
-  virtual void setClock(uint32_t freq) NOT_IMPLEMENTED("setClock");
+  virtual void setClock(uint32_t freq) NOT_IMPLEMENTED("i2csetClock");
 
   virtual void beginTransmission(uint8_t address) {
     // FIXME - implement
@@ -69,18 +69,18 @@ public:
   // Methods from Stream
 
   virtual int available() {
-    notImplemented("available");
+    notImplemented("i2cavailable");
     return 0;
   }
 
   virtual int read() {
-    notImplemented("read");
-    return 0;
+    notImplemented("i2cread");
+    return -1;
   }
 
   virtual int peek() {
-    notImplemented("peek");
-    return 0;
+    notImplemented("i2cpeek");
+    return -1;
   }
 };
 

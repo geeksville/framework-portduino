@@ -10,6 +10,7 @@
         "sstream": "cpp",
         "streambuf": "cpp",
         "memory_resource": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "cmath": "cpp"
     }
 }

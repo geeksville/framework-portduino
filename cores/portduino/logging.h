@@ -10,7 +10,9 @@ enum LogSystem {
   SysCurrent = 0, // The last set current subsystem
   SysUnknown,
   SysCore,
+  SysGPIO,
   SysI2C,
+  SysSPI,
 
   // Ids greater than 1000 are used for application specific purposes
   SysApp0 = 1000

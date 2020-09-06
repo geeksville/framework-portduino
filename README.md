@@ -25,19 +25,9 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 
 ## TODO (short term)
 
-- DONE Use https://github.com/arduino/ArduinoCore-nRF528x-mbedos as a model?
-- DONE Get hello world building as an app
-- DONE Add SimGPIO
-- DONE Add SimSPI
-- DONE Add SimI2C
-- DONE Add Serial
-- DONE Build and run Meshtastic on top of this new framework (stubbed tho)
-- Implement printf
-- Implement random
+- Turn SPI probing on for RF95
 - Implement Thread and Lock
 - Implement Interrupt dispatching
-- Implement FS
-- Change PORTDUINO def to PORTDUINO and PORTDUINO_Linux_x86_64
 - Allow multiple GPIO implementations (on a per GPIO basis) - lets user mix and max sim pins, with motherboard pins, with USB pins
 - Add platform-arm
 - Add CS341SPI driver (USB to SPI chip)
@@ -46,6 +36,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 
 ## TODO (long term)
 
+- Change PORTDUINO def to PORTDUINO and PORTDUINO_Linux_x86_64
 - Figure out why -Os breaks the executable and what part of platformio is setting that (it comes in before the platform stuff even)
 - Change to use platform-native
 - Split out threading library from meshtastic
@@ -59,3 +50,16 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Let LinuxSerial go places other than stdout
 - Make a variant that runs on top of MyNewt
 - Unify Thread/Semaphore/TypedQueue wrappers with the FreeRTOS versions
+
+## Done
+
+- DONE Use https://github.com/arduino/ArduinoCore-nRF528x-mbedos as a model?
+- DONE Get hello world building as an app
+- DONE Add SimGPIO
+- DONE Add SimSPI
+- DONE Add SimI2C
+- DONE Add Serial
+- DONE Build and run Meshtastic on top of this new framework (stubbed tho)
+- Implement printf
+- Implement random
+- Implement FS

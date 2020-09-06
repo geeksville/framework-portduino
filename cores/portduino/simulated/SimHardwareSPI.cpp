@@ -4,17 +4,20 @@
 
 #include "HardwareSPI.h"
 #include "Utility.h"
+#include "logging.h"
 
 namespace arduino {
 
 uint8_t HardwareSPI::transfer(uint8_t data) {
-  notImplemented("transfer");
-  return 0;
+  int v = 42;
+  log(SysSPI, LogVerbose, "SIM: spiTransfer(%d) -> %d", data, v);
+  return v;
 }
 
 uint16_t HardwareSPI::transfer16(uint16_t data) {
-  notImplemented("transfer16");
-  return 0;
+  int v = 4242;
+  log(SysSPI, LogVerbose, "SIM: spiTransfer16(%d) -> %d", data, v);
+  return v;
 }
 
 void HardwareSPI::transfer(void *buf, size_t count)
@@ -22,24 +25,31 @@ void HardwareSPI::transfer(void *buf, size_t count)
 
 // Transaction Functions
 void HardwareSPI::usingInterrupt(int interruptNumber)
-    NOT_IMPLEMENTED("usingInterrupt");
+    NOT_IMPLEMENTED("spiusingInterrupt");
 
 void HardwareSPI::notUsingInterrupt(int interruptNumber)
-    NOT_IMPLEMENTED("notUsingInterrupt");
+    NOT_IMPLEMENTED("spinotUsingInterrupt");
 
-void HardwareSPI::beginTransaction(SPISettings settings)
-    NOT_IMPLEMENTED("beginTransaction");
+void HardwareSPI::beginTransaction(SPISettings settings) {
+  // FIXME implement
+}
 
-void HardwareSPI::endTransaction(void) NOT_IMPLEMENTED("endTransaction");
+void HardwareSPI::endTransaction(void) {
+  // FIXME implement
+}
 
 // SPI Configuration methods
 void HardwareSPI::attachInterrupt() NOT_IMPLEMENTED("attachInterrupt");
 
 void HardwareSPI::detachInterrupt() NOT_IMPLEMENTED("detachInterrupt");
 
-void HardwareSPI::begin() NOT_IMPLEMENTED("spibegin");
+void HardwareSPI::begin() {
+  // FIXME implement
+}
 
-void HardwareSPI::end() NOT_IMPLEMENTED("end");
+void HardwareSPI::end() {
+  // FIXME implement
+}
 
 } // namespace arduino
 

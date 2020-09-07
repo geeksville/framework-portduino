@@ -25,7 +25,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 
 ## TODO (short term)
 
-- Turn SPI probing on for RF95
+- Fix NRF52 build - "pio update" is a clue
 - Implement Thread and Lock
 - Implement Interrupt dispatching
 - Allow multiple GPIO implementations (on a per GPIO basis) - lets user mix and max sim pins, with motherboard pins, with USB pins
@@ -63,3 +63,4 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Implement printf
 - Implement random
 - Implement FS
+- Turn SPI probing on for RF95

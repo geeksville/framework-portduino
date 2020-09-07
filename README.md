@@ -26,6 +26,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 ## TODO (short term)
 
 - Fix NRF52 build - "pio update" is a clue
+- Prop to dev branch
 - Implement Thread and Lock
 - Implement Interrupt dispatching
 - Allow multiple GPIO implementations (on a per GPIO basis) - lets user mix and max sim pins, with motherboard pins, with USB pins
@@ -43,6 +44,7 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Implement a tiny rasberry pi example that blinks a LED
 - Show that same example blinking a sim LED
 - Announce and request feedback
+- Add a scripting API for doing button presses, reading current screen contents, etc...
 - Use exceptions on linux
 - Split out logging library
 - Change into an actual real platformio "framework"

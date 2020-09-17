@@ -25,7 +25,6 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 
 ## TODO (short term)
 
-- Fix NRF52 build - "pio update" is a clue
 - Prop to dev branch
 - Implement Thread and Lock
 - Implement Interrupt dispatching
@@ -66,3 +65,4 @@ Eventually a variant of this library will allow removing SoftDevice from the NRF
 - Implement random
 - Implement FS
 - Turn SPI probing on for RF95
+- Fix NRF52 build - "pio update" is a clue

@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	req.lineoffsets[0] = 0;
 	req.flags = GPIOHANDLE_REQUEST_OUTPUT;
 	// memcpy(req.default_values, &data, sizeof(req.default_values));
-	strcpy(req.consumer_label, "gpio4");
+	strcpy(req.consumer_label, "gpiotestapp");
 	req.lines  = 1;
 
 	ret = ioctl(fd, GPIO_GET_LINEHANDLE_IOCTL, &req);

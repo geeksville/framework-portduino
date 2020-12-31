@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 {
     int fd;
     struct spi_ioc_transfer xfer[2];
-    unsigned char buf[32], *bp;
+    unsigned char outbuf[32], inbuf[32], *bp;
     int len, status;
 
     const char *name = "/dev/spidev0.0";
@@ -42,30 +42,28 @@ int main(int argc, char **argv)
     */
 
     memset(xfer, 0, sizeof xfer);
-    memset(buf, 0, sizeof buf);
-    len = sizeof buf;
+    memset(outbuf, 0, sizeof outbuf);
+    memset(inbuf, 0x55, sizeof inbuf);
 
     /*
-* Send a GetID command
-*/
-    buf[0] = 0x9f;
-    len = 6;
-    xfer[0].tx_buf = (unsigned long)buf;
-    xfer[0].len = 1;
+* Send a sx127x get version command */
+    outbuf[0] = 0x42;
+    len = 2;
+    xfer[0].tx_buf = (unsigned long)outbuf;
+    xfer[0].len = len;
 
-    xfer[1].rx_buf = (unsigned long)buf;
-    xfer[1].len = 6;
-    xfer[1].cs_change = true; // deassert CS after last transaction
+    xfer[0].rx_buf = (unsigned long)inbuf;
+    xfer[0].cs_change = true; // deassert CS after last transaction
 
-    status = ioctl(fd, SPI_IOC_MESSAGE(2), xfer);
+    status = ioctl(fd, SPI_IOC_MESSAGE(1), xfer);
     if (status < 0)
     {
         perror("SPI_IOC_MESSAGE");
         return -1;
     }
 
-    printf("response(%d): ", status);
-    for (bp = buf; len; len--)
+    printf("response(%d) (first byte of response should be ignored): ", status);
+    for (bp = inbuf; len; len--)
         printf("%02x ", *bp++);
     printf("\n");
 

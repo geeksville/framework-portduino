@@ -6,6 +6,9 @@
 #include "Utility.h"
 #include "logging.h"
 
+// Turn off for now - instead use the linux SPI driver version
+#if 0
+
 namespace arduino {
 
 uint8_t HardwareSPI::transfer(uint8_t data) {
@@ -54,3 +57,5 @@ void HardwareSPI::end() {
 } // namespace arduino
 
 HardwareSPI SPI;
+
+#endif

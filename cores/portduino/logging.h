@@ -13,6 +13,7 @@ enum LogSystem {
   SysGPIO,
   SysI2C,
   SysSPI,
+  SysInterrupt,
 
   // Ids greater than 1000 are used for application specific purposes
   SysApp0 = 1000

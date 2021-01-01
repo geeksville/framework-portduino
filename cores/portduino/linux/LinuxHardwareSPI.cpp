@@ -63,11 +63,11 @@ public:
             return status;
         }
 
-        printf("SPI response(%d): ", status);
+        /* printf("SPI response(%d): ", status);
         size_t len = bufLen;
         for (auto bp = inBuf; len; len--)
             printf("%02x ", *bp++);
-        printf("\n");
+        printf("\n"); */
 
         return 0;
     }

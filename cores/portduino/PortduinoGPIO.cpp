@@ -24,7 +24,7 @@ void gpioInit() {
 }
 
 void gpioIdle() {
-  log(SysGPIO, LogDebug, "doing idle refresh");
+  // log(SysGPIO, LogDebug, "doing idle refresh");
   for(size_t i = 0; i < NUM_GPIOS; i++)
     pins[i]->refreshState();
 }
@@ -88,14 +88,14 @@ void analogWrite(pin_size_t pinNumber, int value)
 void attachInterrupt(pin_size_t interruptNumber, voidFuncPtr callback,
                      PinStatus mode)
 {
-  log(SysInterrupt, LogDebug, "attachInterrupt %d", interruptNumber);
+  //log(SysInterrupt, LogDebug, "attachInterrupt %d", interruptNumber);
   auto p = getGPIO(interruptNumber);
   p->attachInterrupt(callback, mode);
 }
 
 void detachInterrupt(pin_size_t interruptNumber)
 {
-  log(SysInterrupt, LogDebug, "detachInterrupt %d", interruptNumber);
+  //log(SysInterrupt, LogDebug, "detachInterrupt %d", interruptNumber);
   auto p = getGPIO(interruptNumber);
   p->detachInterrupt();
 }

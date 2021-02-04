@@ -11,4 +11,10 @@ void notImplemented(const char *msg);
 #define NOT_IMPLEMENTED(msg)                                                   \
   { notImplemented(msg); }
 
+/**
+ * Normally arduino apps don't use exceptions.  If exceptions are allowed an exception will be thrown, otherwise an error message will be printed
+ * and the function will return.
+ */
+void portduinoError(const char *msg, ...);
+
 #endif // PORTDUINO_UTILITY_H

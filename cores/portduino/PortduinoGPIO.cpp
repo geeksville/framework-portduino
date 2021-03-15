@@ -18,6 +18,7 @@
 static GPIOPinIf *pins[NUM_GPIOS];
 
 
+/** By default we assign simulated GPIOs to all pins, later applications can customize this in portduinoSetup */
 void gpioInit() {
   for(size_t i = 0; i < NUM_GPIOS; i++)
     pins[i] = new SimGPIOPin(i, "Unbound");

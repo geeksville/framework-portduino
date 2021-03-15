@@ -10,10 +10,43 @@
 #include <assert.h>
 #include <linux/spi/spidev.h>
 
-class SPIChip : private PosixFile
+class SPIChip 
 {
 public:
-    SPIChip(const char *name = "/dev/spidev0.0") : PosixFile(name) {}
+    /**
+     * Do a SPI transaction to the selected device
+     * 
+     * @param outBuf if NULL it will be not used (zeros will be sent)
+     * @param inBuf if NULL it will not be used (device response bytes will be discarded)
+     * @param deassertCS after last transaction (if not set, it will be left asserted)
+     * @return 0 for success, else ERRNO fault code
+     */
+    virtual int transfer(const uint8_t *outBuf, uint8_t *inBuf, size_t bufLen, bool deassertCS = true) = 0;
+};
+
+
+class SimSPIChip : public SPIChip
+{
+public:
+    /**
+     * Do a SPI transaction to the selected device
+     * 
+     * @param outBuf if NULL it will be not used (zeros will be sent)
+     * @param inBuf if NULL it will not be used (device response bytes will be discarded)
+     * @param deassertCS after last transaction (if not set, it will be left asserted)
+     * @return 0 for success, else ERRNO fault code
+     */
+    int transfer(const uint8_t *outBuf, uint8_t *inBuf, size_t bufLen, bool deassertCS = true) {
+        log(SysSPI, LogVerbose, "SIM: spiTransfer(%d) -> %d", bufLen);
+        return 0;
+    }
+};
+
+
+class LinuxSPIChip : public SPIChip, private PosixFile
+{
+public:
+    LinuxSPIChip(const char *name = "/dev/spidev0.0") : PosixFile(name) {}
 
     /**
      * Do a SPI transaction to the selected device
@@ -140,7 +173,13 @@ namespace arduino
         if(spiChip)
             delete spiChip;
 
-        spiChip = new SPIChip();
+        spiChip = new SimSPIChip();
+
+        // FIXME, only install the following on linux and only if we see that the device exists in the filesystem
+        /*
+        delete spiChip;
+        spiChip = new LinuxSPIChip();
+        */
     }
 
     void HardwareSPI::end()

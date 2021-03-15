@@ -17,4 +17,8 @@ void notImplemented(const char *msg);
  */
 void portduinoError(const char *msg, ...);
 
+/** Trigger a debugger breakpoint if in the debugger 
+ */
+void portduinoDebug();
+
 #endif // PORTDUINO_UTILITY_H

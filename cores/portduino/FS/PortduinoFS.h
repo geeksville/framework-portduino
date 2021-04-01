@@ -4,4 +4,4 @@
 
 extern fs::FS PortduinoFS;
 
-extern VFSImpl portduinoVFS; // Do not use directly, instead use PortduinoFS
+extern std::shared_ptr<VFSImpl> portduinoVFS; // Do not use directly, instead use PortduinoFS

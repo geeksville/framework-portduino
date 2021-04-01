@@ -1,5 +1,7 @@
 #include "PortduinoFS.h"
 
-VFSImpl portduinoVFS; // Do not use directly, instead use PortduinoFS
-static FSImplPtr vfsImpl(&portduinoVFS);
-FS PortduinoFS = FS(vfsImpl);
+// Do not use directly, instead use PortduinoFS
+std::shared_ptr<VFSImpl> portduinoVFS = std::make_shared<VFSImpl>();
+// std::shared_ptr<VFSImpl> portduinoVFS(new VFSImpl());
+
+FS PortduinoFS = FS(portduinoVFS);

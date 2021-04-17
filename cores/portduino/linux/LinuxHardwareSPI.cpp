@@ -176,10 +176,8 @@ namespace arduino
         spiChip = new SimSPIChip();
 
         // FIXME, only install the following on linux and only if we see that the device exists in the filesystem
-        /*
         delete spiChip;
         spiChip = new LinuxSPIChip();
-        */
     }
 
     void HardwareSPI::end()

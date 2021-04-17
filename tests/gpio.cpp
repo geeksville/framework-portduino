@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	char chrdev_name[20];
 	int fd, ret = 0;
 
-	strcpy(chrdev_name, "/dev/gpiochip0");
+	strcpy(chrdev_name, "/dev/gpiochip2");
 
 	/*  Open device: gpiochip0 for GPIO bank A */
 	fd = open(chrdev_name, 0);

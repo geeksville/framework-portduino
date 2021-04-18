@@ -11,7 +11,7 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "linux/GPIOChip.h"
+// #include "linux/gpio/classic/GPIOChip.h"
 
 #define NUM_GPIOS 64
 

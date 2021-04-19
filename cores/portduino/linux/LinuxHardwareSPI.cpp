@@ -59,9 +59,6 @@ public:
     int transfer(const uint8_t *outBuf, uint8_t *inBuf, size_t bufLen, bool deassertCS = true)
     {
         struct spi_ioc_transfer xfer;
-        static uint8_t scratchBuf[256];
-
-        assert(bufLen <= sizeof(scratchBuf));
 
         /*
         We want default SPI mode 0, MSB first 
@@ -75,18 +72,10 @@ public:
         memset(&xfer, 0, sizeof xfer);
         memset(inBuf, 0x55, bufLen);
 
-        if(!outBuf) {
-            memset(scratchBuf, 0, bufLen);
-            outBuf = scratchBuf;
-        }
-
-        if(!inBuf)
-            inBuf = scratchBuf;
-
         xfer.tx_buf = (unsigned long)outBuf;
         xfer.len = bufLen;
 
-        xfer.rx_buf = (unsigned long)inBuf;
+        xfer.rx_buf = (unsigned long)inBuf; // Could be NULL, to ignore RX bytes
         xfer.cs_change = deassertCS; 
 
         int status = ioctl(SPI_IOC_MESSAGE(1), &xfer);
@@ -117,6 +106,7 @@ namespace arduino
         uint8_t response;
         assert(spiChip);
         spiChip->transfer(&data, &response, 1, false); // leave CS asserted
+        // printf("sent 0x%x, received %0x\n", data, response);
         return response;
     }
 
@@ -132,8 +122,10 @@ namespace arduino
     // In fact - switch the API to the nrf52/esp32 arduino version that takes both an
     // inbuf and an outbuf;
     void HardwareSPI::transfer(void *buf, size_t count) {
-        NOT_IMPLEMENTED("transferBuf");
-        assert(0); // make fatal for now to prevent accidental use
+        notImplemented("spi general transfer"); // I don't think anyone is using this yet
+        assert(spiChip);
+        assert(0);
+        // spiChip->transfer(buf, buf, count); 
     }
         
 
@@ -149,12 +141,14 @@ namespace arduino
     void HardwareSPI::beginTransaction(SPISettings settings)
     {
         // Do nothing
+        //printf("beginTransaction\n");
     }
 
     void HardwareSPI::endTransaction(void)
     {
         assert(spiChip);
         spiChip->transfer(NULL, NULL, 0, true); // turn off chip select
+        //printf("endTransaction\n");
     }
 
     // SPI Configuration methods

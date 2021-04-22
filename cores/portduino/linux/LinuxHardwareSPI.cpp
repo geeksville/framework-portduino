@@ -46,7 +46,14 @@ public:
 class LinuxSPIChip : public SPIChip, private PosixFile
 {
 public:
-    LinuxSPIChip(const char *name = "/dev/spidev0.0") : PosixFile(name) {}
+    LinuxSPIChip(const char *name = "/dev/spidev0.0") : PosixFile(name) {
+        uint8_t mode = SPI_MODE_0;
+        uint8_t lsb = false;
+        int status = ioctl(SPI_IOC_WR_MODE, &mode);
+        assert(status >= 0);
+        status = ioctl(SPI_IOC_WR_LSB_FIRST, &lsb);
+        assert(status >= 0);
+    }
 
     /**
      * Do a SPI transaction to the selected device
@@ -142,12 +149,17 @@ namespace arduino
     {
         // Do nothing
         //printf("beginTransaction\n");
+        assert(settings.bitOrder == MSBFIRST); // we don't support changing yet
+        assert(settings.dataMode == SPI_MODE0);
     }
 
     void HardwareSPI::endTransaction(void)
     {
         assert(spiChip);
-        spiChip->transfer(NULL, NULL, 0, true); // turn off chip select
+
+        // FIXME - for the time being I'm not using automatic ship select management
+        // spiChip->transfer(NULL, NULL, 0, true); // turn off chip select
+        
         //printf("endTransaction\n");
     }
 

@@ -27,7 +27,7 @@ void gpioInit() {
 void gpioIdle() {
   // log(SysGPIO, LogDebug, "doing idle refresh");
   for(size_t i = 0; i < NUM_GPIOS; i++)
-    pins[i]->refreshState();
+    pins[i]->refreshIfNeeded();
 }
 
 void gpioBind(GPIOPinIf *p) {
@@ -65,7 +65,7 @@ PinStatus digitalRead(pin_size_t pinNumber)
   auto p = getGPIO(pinNumber);
   auto r = p->readPin();
 
-  log(SysGPIO, LogDebug, "digitalRead(%d) -> %d", pinNumber, r);
+  // log(SysGPIO, LogDebug, "digitalRead(%d) -> %d", pinNumber, r);
   return r;
 }
 

@@ -21,7 +21,7 @@ public:
    * the mirrored copy of state that is returned for calls to readPin().
    * 
    * If an ISR is attached to this GPIO, call if the speicifed PinStatus matches */
-    virtual void refreshState() = 0;
+    virtual void refreshIfNeeded() = 0;
 
     /** Convience function for the common case of mapping to only one GPIO */
     virtual PinStatus readPin() = 0;
@@ -57,8 +57,13 @@ class GPIOPin : public GPIOPinIf
 
     voidFuncPtr isr = NULL;
 
+    bool silent = false; // If silent, we won't emit logs
+
 protected:
+
+    /// What sorts of edges do we want to invoke the ISR for?
     int8_t isrPinStatus = -1; // -1 or PinStatus
+
 public:
     GPIOPin(pin_size_t n, String _name) : number(n), name(_name) {}
     virtual ~GPIOPin() {}
@@ -67,31 +72,25 @@ public:
 
     const char *getName() const { return name.c_str(); }
 
-    /** Called to read from a pin and if the pin has changed state possibly call an ISR, also changes
-   * the mirrored copy of state that is returned for calls to readPin().
-   * 
-   * If an ISR is attached to this GPIO, call if the speicifed PinStatus matches */
-    void refreshState()
-    {
-        if (mode != OUTPUT)
-        {
-            auto newState = readPinHardware();
-            auto oldState = status;
-            status = newState;
-            callISR(oldState, newState);
-        }
-    }
-
     /** Convience function for the common case of mapping to only one GPIO */
-    virtual PinStatus readPin()
+    PinStatus readPin()
     {
+        refreshState(); // Get current hw pin values (might also cause an ISR to run)
+
+        // if (!silent) log(SysGPIO, LogInfo, "readPin(%s, %d, %d)", getName(), getPinNum(), status);
+
         return status;
     }
 
     /** Convience function for the common case of mapping to only one GPIO */
     virtual void writePin(PinStatus s)
     {
+        // log(SysGPIO, LogDebug, "writePin(%s, %d)", getName(), s);
+        assert(s == HIGH || s == LOW); // Don't let user set invalid values
         status = s;
+
+        if (!silent)
+            log(SysGPIO, LogInfo, "writePin(%s, %d, %d)", getName(), getPinNum(), s);
     }
 
     virtual int analogRead()
@@ -117,6 +116,25 @@ public:
     virtual void setPinMode(PinMode m)
     {
         mode = m;
+        if (!silent)
+            log(SysGPIO, LogInfo, "setPinMode(%s, %d, %d)", getName(), getPinNum(), m);
+    }
+
+    /** CALLED ONLY BY PORTDUINO special thread
+     * If this pin has an ISR attached, poll it and call the ISR if necessary
+     */
+    void refreshIfNeeded() {
+        if(isr)
+            refreshState();
+    }        
+
+    /** Set silent mode
+     * @return this for easy chaining
+     */
+    GPIOPin *setSilent(bool s = true)
+    {
+        silent = s;
+        return this;
     }
 
 private:
@@ -138,8 +156,25 @@ private:
         }
     }
 
+    /** Called to read from a pin and if the pin has changed state possibly call an ISR, also changes
+   * the mirrored copy of state that is returned for calls to readPin().
+   * 
+   * If an ISR is attached to this GPIO, call if the speicifed PinStatus matches */
+    void refreshState()
+    {
+        if (mode != OUTPUT)
+        {
+            auto newState = readPinHardware();
+            if(!silent)
+                log(SysGPIO, LogDebug, "refreshState(%s, %d)", getName(), newState);            
+            auto oldState = status;
+            status = newState;
+            callISR(oldState, newState);
+        }
+    }
+
 protected:
-    /// Read the low level hardware for this pin
+    /// Return the current the low level hardware for this pin, used to set pin status and (later) trigger ISRs
     virtual PinStatus readPinHardware()
     {
         // default to assume no change
@@ -149,42 +184,8 @@ protected:
 
 class SimGPIOPin : public GPIOPin
 {
-    bool silent = false; // If silent, we won't emit logs
-
 public:
     SimGPIOPin(pin_size_t n, String _name) : GPIOPin(n, _name) {}
-
-    /** Set silent mode
-     * @return this for easy chaining
-     */
-    SimGPIOPin *setSilent(bool s = true)
-    {
-        silent = s;
-        return this;
-    }
-
-protected:
-    virtual void writePin(PinStatus s)
-    {
-        if (!silent)
-            log(SysGPIO, LogInfo, "SimGPIOPin::writePin(%s, %d, %d)", getName(), getPinNum(), s);
-        GPIOPin::writePin(s);
-    }
-
-    virtual PinStatus readPin()
-    {
-        auto r = GPIOPin::readPin();
-        if (!silent)
-            log(SysGPIO, LogInfo, "SimGPIOPin::readPin(%s, %d, %d)", getName(), getPinNum(), r);
-        return r;
-    }
-
-    virtual void setPinMode(PinMode m)
-    {
-        if (!silent)
-            log(SysGPIO, LogInfo, "SimGPIOPin::setPinMode(%s, %d, %d)", getName(), getPinNum(), m);
-        GPIOPin::setPinMode(m);
-    }
 };
 
 void gpioInit();

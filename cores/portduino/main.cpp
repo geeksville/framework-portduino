@@ -64,7 +64,7 @@ static error_t parse_opt(int key, char *arg, struct argp_state *state) {
     args->fsDir = arg;
     break;
   case 'h':
-    if(sscanf(arg, "%d", &args->hwId) < 1)
+    if (sscanf(arg, "%d", &args->hwId) < 1)
       return ARGP_ERR_UNKNOWN;
     break;
   case ARGP_KEY_ARG:
@@ -102,20 +102,35 @@ int main(int argc, char *argv[]) {
   portduinoCustomInit();
 
   auto *args = &portduinoArguments;
-  args->fsDir = "/tmp/portduinofs";
+
   args->hwId = 1;
 
   auto parseResult = argp_parse(&argp, argc, argv, 0, 0, args);
   if (parseResult == 0) {
-    printf("Portduino is starting, HWID=%d, VFS root at %s\n", args->hwId,
-           args->fsDir);
+    String fsRoot;
 
-    String fsroot(args->fsDir);
-    mkdir(fsroot.c_str(), 0777);
+    if (!args->fsDir) {
+      // create a default dir
+
+      const char *homeDir = getenv("HOME");
+      assert(homeDir);
+
+      fsRoot += homeDir + String("/.portduino");
+      mkdir(fsRoot.c_str(), 0700);
+
+      const char *instanceName = "default";
+      fsRoot += "/" + String(instanceName);
+    } else
+      fsRoot += args->fsDir;
+
+    printf("Portduino is starting, HWID=%d, VFS root at %s\n", args->hwId,
+           fsRoot.c_str());
+
+    mkdir(fsRoot.c_str(), 0700);
 
     // FIXME erase FS if needed
 
-    portduinoVFS->mountpoint(fsroot.c_str());
+    portduinoVFS->mountpoint(fsRoot.c_str());
 
     gpioInit();
     portduinoSetup();

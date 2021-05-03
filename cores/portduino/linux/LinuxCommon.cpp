@@ -8,17 +8,17 @@
 #include <sched.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 void delay(unsigned long milliSec) {
-  timespec ts{.tv_sec = (time_t)(milliSec / 1000),
-              .tv_nsec = (long)(milliSec % 1000) * 1000L * 1000L};
-  nanosleep(&ts, NULL);
+  //timespec ts{.tv_sec = (time_t)(milliSec / 1000),
+  //            .tv_nsec = (long)(milliSec % 1000) * 1000L * 1000L};
+  //nanosleep(&ts, NULL);
+  usleep(milliSec * 1000); 
 }
 
 void delayMicroseconds(unsigned int usec) {
-  timespec ts{.tv_sec = (time_t)(usec / 1000000L),
-              .tv_nsec = (long)(usec % 1000000L) * 1000L};
-  nanosleep(&ts, NULL);
+  usleep(usec); // better than nanosleep because it lets other threads run
 }
 
 void yield(void) { sched_yield(); }

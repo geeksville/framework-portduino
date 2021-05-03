@@ -14,11 +14,20 @@ extern "C" unsigned long micros(void) {
   return usecs;
 }
 
+static unsigned long startMsec;
+
+/**
+ * Return msecs since this 'arduino' instance started running
+ */
 extern "C" unsigned long millis(void) {
   struct timeval te;
   gettimeofday(&te, NULL); // get current time
+
   unsigned long milliseconds =
       te.tv_sec * 1000LL + te.tv_usec / 1000; // calculate milliseconds
-  // printf("milliseconds: %llu\n", milliseconds);
-  return milliseconds;
+
+  if(startMsec == 0) // First run
+    startMsec = milliseconds;
+
+  return milliseconds - startMsec;
 }

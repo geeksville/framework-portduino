@@ -5,10 +5,13 @@
 #include "HardwareSPI.h"
 #include "SPIChip.h"
 #include "Utility.h"
-#include "linux/PosixFile.h"
 #include "logging.h"
 
 #include <assert.h>
+
+#ifdef PORTDUINO_LINUX_HARDWARE
+
+#include "linux/PosixFile.h"
 #include <linux/spi/spidev.h>
 
 class LinuxSPIChip : public SPIChip, private PosixFile {
@@ -69,6 +72,7 @@ public:
     return 0;
   }
 };
+#endif
 
 // FIXME, this is kinda skanky, but for now we assume one SPI device
 SPIChip *spiChip;
@@ -139,6 +143,7 @@ void HardwareSPI::begin() {
   // We only do this init once per boot
   if (!spiChip) {
 
+#ifdef PORTDUINO_LINUX_HARDWARE
     // FIXME, only install the following on linux and only if we see that the
     // device exists in the filesystem
     try {
@@ -146,6 +151,7 @@ void HardwareSPI::begin() {
     } catch (...) {
       printf("No hardware spi chip found...\n");
     }
+#endif
 
     if (!spiChip) // no hw spi found, use the simulator
       spiChip = new SimSPIChip();

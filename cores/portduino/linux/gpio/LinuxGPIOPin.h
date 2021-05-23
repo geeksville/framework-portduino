@@ -2,6 +2,8 @@
 // Created by kevinh on 9/1/20.
 //
 
+#ifdef PORTDUINO_LINUX_HARDWARE
+
 #include "Arduino.h"
 #include "Common.h"
 #include "PortduinoGPIO.h"
@@ -44,4 +46,4 @@ protected:
   virtual void setPinMode(PinMode m);
 };
 
-
+#endif

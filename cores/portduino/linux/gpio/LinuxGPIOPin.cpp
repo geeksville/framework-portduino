@@ -1,3 +1,5 @@
+#ifdef PORTDUINO_LINUX_HARDWARE
+
 #include "linux/gpio/LinuxGPIOPin.h"
 #include <assert.h>
 #include <dirent.h>
@@ -115,3 +117,4 @@ void LinuxGPIOPin::setPinMode(PinMode m) {
 }
 
 
+#endif

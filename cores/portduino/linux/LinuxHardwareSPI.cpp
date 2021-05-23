@@ -37,7 +37,7 @@ public:
      * @return 0 for success, else ERRNO fault code
      */
     int transfer(const uint8_t *outBuf, uint8_t *inBuf, size_t bufLen, bool deassertCS = true) {
-        log(SysSPI, LogVerbose, "SIM: spiTransfer(%d) -> %d", bufLen);
+        // log(SysSPI, LogVerbose, "SIM: spiTransfer(%d) -> %d", bufLen);
         return 0;
     }
 };
@@ -176,14 +176,20 @@ namespace arduino
 
     void HardwareSPI::begin()
     {
-        if(spiChip)
+        if(spiChip) // delete any old chips
             delete spiChip;
-
-        spiChip = new SimSPIChip();
+        spiChip = NULL;
 
         // FIXME, only install the following on linux and only if we see that the device exists in the filesystem
-        delete spiChip;
-        spiChip = new LinuxSPIChip();
+        try {
+            spiChip = new LinuxSPIChip();
+        }
+        catch(...) {
+            printf("No hardware spi chip found...\n");
+        }
+
+        if(!spiChip)    // no hw spi found, use the simulator
+            spiChip = new SimSPIChip();
     }
 
     void HardwareSPI::end()

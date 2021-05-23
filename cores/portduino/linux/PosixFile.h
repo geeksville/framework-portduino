@@ -13,6 +13,7 @@
 /** A posix file descriptor based file
  */
 
+
 class PosixFile
 {
     int fd;
@@ -37,11 +38,11 @@ public:
     int ioctl(unsigned long op, void *arg)
     {
         if(fd < 0)
-            return fd;
+            portduinoError("no file descriptor, errno=%d", errno);
 
         auto ret = ::ioctl(fd, op, arg);
         if (ret == -1)
-            throw -errno;
+            portduinoError("ioctl failed, errno=%d", errno);
         return ret;
     }
 };

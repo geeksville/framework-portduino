@@ -14,6 +14,7 @@ void notImplemented(const char *msg)
 void portduinoError(const char *msg, ...)
 {
     printf("Portduino critical error: %s\n", msg);
+    throw Exception(msg);
 }
 
 void portduinoDebug()

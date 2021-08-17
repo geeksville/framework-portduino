@@ -1,12 +1,12 @@
 # Portduino
 
-This is an 'alpha level' attempt to port the Arduino API so that it can run on top of Linux (and other desktop operating systems).  This is to facilitate the following use-cases:
+This is an attempt to port the Arduino API so that it can run on top of Linux (and other desktop operating systems).  This is to facilitate the following use-cases:
 
 - You can run code originally intended to arduino like environments (nrf52, esp32, avr etc...) without modification as 'user-space' applications.  Those applications can talk to real SPI, I2C, GPIO, serial, wifi on your linux device using the 'standard' arduino APIs.  Many libraries/projects from platformio 'just work'.  Though of course the underlying OS is not an RTOS and hard-real-time constraints may get a bit fuzzy. ;-)
 - You can debug/develop on a desktop OS where often the debugging environment is more forgiving and the compile/load/debug workflow is quite fast.
 - You can run with all devices simulated (for automated integration testing or simulation) or some/all of the 'devices' connected to real hardware.
 
-We've been using this project successfully on a fairly sizable & popular [platformio](https://platformio.org/) project ([meshtastic](https://github.com/meshtastic/)) for the last several months.  We use it both for our continuous integration tests (where we run our device software through crude simulated tests in github actions) and to support Meshtastic on linux for the Pine64 Lora USB dongle.
+We've been using this project successfully on a fairly sizable & popular [Platformio](https://platformio.org/) project ([Meshtastic](https://github.com/meshtastic/)) for the last several months.  We use it both for our continuous integration tests (where we run our device software through crude simulated tests in github actions) and to support Meshtastic on linux for the Pine64 Lora USB dongle.
 
 ## Description
 
@@ -21,10 +21,6 @@ We implement the 'ArduinoCore' libs/API layer and support the following device l
 - Serial (but actually being done through any Unix file descriptor - so could be pipes/files/devices)
 - I2C (not yet implemented in alpha, if you want this speak up)
 - Any of the above can be implemented by particular 'Drivers' - so either the mainboard kernel-space SPI/I2C controller or via external USB to SPI/I2C/GPIO adapters
-
-## Secondary goals
-
-Eventually a variant of this library will allow removing SoftDevice from the NRF52 targets - for a dramatic flash/RAM savings (this will be built on top of [Apache MyNewt](https://mynewt.apache.org/))
 
 ## How to use
 

@@ -33,7 +33,7 @@ build_flags = ${env.build_flags} -O0 -lgpiod
 framework = arduino
 ```
 
-For an example (sizable) project that is using this see (meshtastic-device)[https://github.com/meshtastic/Meshtastic-device].  Every checkin to that project triggers a new build of the 'native/portuino' version of meshtastic and runs it as a simulation test.  The github (actions)[https://github.com/meshtastic/Meshtastic-device/actions] show the commands used to build the linux binary and the console output from running it.
+For an example (sizable) project that is using this see [meshtastic-device](https://github.com/meshtastic/Meshtastic-device).  Every checkin to that project triggers a new build of the 'native/portuino' version of meshtastic and runs it as a simulation test.  The github [actions](https://github.com/meshtastic/Meshtastic-device/actions) show the commands used to build the linux binary and the console output from running it.
 
 ## TODO (short term)
 

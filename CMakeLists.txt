@@ -4,7 +4,8 @@ project(Portduino)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(cores/arduino/api)
-include_directories(src)
+include_directories(cores/portduino)
+include_directories(cores/portduino/FS)
 
 add_executable(Portduino
         cores/arduino/api/deprecated/Client.h
@@ -46,13 +47,18 @@ add_executable(Portduino
         cores/arduino/api/Udp.h
         cores/arduino/api/USBAPI.h
         cores/arduino/api/WCharacter.h
-        src/Arduino.h
-        src/itoa.cpp
-        src/dtostrf.c
-        src/main.cpp
-        src/linux/millis.cpp
-        src/simulated/SimCommon.cpp
-        src/simulated/Utility.cpp
-        src/simulated/Utility.h
-        src/simulated/SimHardwareSPI.cpp
-        example/test.cpp src/simulated/SimHardwareI2C.cpp src/simulated/SimHardwareI2C.h src/linux/LinuxCommon.cpp src/linux/LinuxSerial.cpp src/linux/LinuxSerial.h)
+        cores/portduino/Arduino.h
+        cores/portduino/itoa.cpp
+        cores/portduino/dtostrf.c
+        cores/portduino/main.cpp
+        cores/portduino/linux/millis.cpp
+        cores/portduino/simulated/SimCommon.cpp
+        cores/portduino/Utility.cpp
+        cores/portduino/Utility.h
+        cores/portduino/simulated/SimHardwareSPI.cpp
+        example/test.cpp
+       	cores/portduino/simulated/SimHardwareI2C.cpp
+       	cores/portduino/simulated/SimHardwareI2C.h
+       	cores/portduino/linux/LinuxCommon.cpp
+       	cores/portduino/linux/LinuxSerial.cpp
+       	cores/portduino/linux/LinuxSerial.h)

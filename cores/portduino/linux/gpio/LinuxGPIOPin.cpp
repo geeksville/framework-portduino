@@ -16,7 +16,8 @@ static int chip_dir_filter(const struct dirent *entry)
 	if (ret < 0)
 		return 0;
 
-	is_chip = gpiod_is_gpiochip_device(path);
+	// is_chip = gpiod_is_gpiochip_device(path);
+  is_chip = true;
 	free(path);
 	return !!is_chip;
 }
@@ -45,10 +46,11 @@ static gpiod_line *getLine(const char *chipLabel, const char *linuxPinName) {
   struct dirent **entries;
   int num_chips = scandir("/dev/", &entries, chip_dir_filter, alphasort);
   assert(num_chips > 0); // FIXME, throw exception
+	struct gpiod_chip *chip;
 
   log(SysGPIO, LogDebug, "getLine(%s, %s)", chipLabel, linuxPinName);
   for (int i = 0; i < num_chips; i++) {
-    auto chip = chip_open_by_name(entries[i]->d_name);
+    chip = chip_open_by_name(entries[i]->d_name);
     if (!chip) {
       if (errno == EACCES)
         continue; // skip chips we don't have access to
@@ -57,10 +59,7 @@ static gpiod_line *getLine(const char *chipLabel, const char *linuxPinName) {
     } else {
       auto label = gpiod_chip_label(chip);
       if (strcmp(label, chipLabel) == 0) {
-        auto offset = gpiod_chip_find_line(chip, linuxPinName);
-        assert(offset >= 0); // fixme throw
-        auto line = gpiod_chip_get_line(chip, offset);
-        assert(line); // fixme throw
+        auto line = gpiod_chip_find_line(chip, linuxPinName);
 
         struct gpiod_line_request_config request = {
             consumer, GPIOD_LINE_REQUEST_DIRECTION_AS_IS, 0};
@@ -108,12 +107,12 @@ void LinuxGPIOPin::setPinMode(PinMode m) {
   GPIOPin::setPinMode(m);
 
   // Set direction, if output use the current pinstate as the output value
-  int res =
-      gpiod_line_set_config(line,
-                            (m == OUTPUT) ? GPIOD_LINE_REQUEST_DIRECTION_OUTPUT
-                                          : GPIOD_LINE_REQUEST_DIRECTION_INPUT,
-                            0, readPin());
-  assert(res == 0);
+  if (m == OUTPUT) {
+    gpiod_line_request_output(line, consumer, readPin());
+  }
+  else {
+    gpiod_line_request_input(line, consumer);
+  }
 }
 
 

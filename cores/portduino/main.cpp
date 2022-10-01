@@ -3,6 +3,7 @@
 #include "PortduinoGPIO.h"
 #include <argp.h>
 #include <stdio.h>
+#include <ftw.h>
 
 /** # msecs to sleep each loop invocation.  FIXME - make this controlable via
  * config file or command line flags.
@@ -29,9 +30,7 @@ static char doc[] = "An application written with porduino";
 static char args_doc[] = "...";
 
 static struct argp_option options[] = {
-    // FIXME not yet implemented
-    // {"erase", 'e', 0, 0, "Erase virtual filesystem before use"},
-
+    {"erase", 'e', 0, 0, "Erase virtual filesystem before use"},
     {"fsdir", 'd', "DIR", 0, "The directory to use as the virtual filesystem"},
     {"hwid", 'h', "HWID", 0,
      "The mac address to assign to this virtual machine"},
@@ -84,6 +83,26 @@ void getMacAddr(uint8_t *dmac) {
   dmac[5] = portduinoArguments.hwId & 0xff;
 }
 
+/*
+ * Functions to remove contents of directory
+ * Adapted from: https://stackoverflow.com/a/5467788 
+ */ 
+int unlink_cb(const char *fpath, const struct stat *sb, int typeflag, struct FTW *ftwbuf)
+{
+    int rv = 0; 
+    if (0 < ftwbuf->level)
+      rv = remove(fpath);
+    if (rv)
+        perror(fpath);
+
+    return rv;
+}
+
+int rmrf(char *path)
+{
+    return nftw(path, unlink_cb, 64, FTW_DEPTH | FTW_PHYS);
+}
+
 static struct argp argp = {options, parse_opt, args_doc, doc, children, 0, 0};
 
 /**
@@ -126,9 +145,11 @@ int main(int argc, char *argv[]) {
     printf("Portduino is starting, HWID=%d, VFS root at %s\n", args->hwId,
            fsRoot.c_str());
 
-    mkdir(fsRoot.c_str(), 0700);
-
-    // FIXME erase FS if needed
+    int status = mkdir(fsRoot.c_str(), 0700);
+    if (status != 0 && errno == EEXIST && args->erase) {
+      // Remove contents of existing VFS root directory
+      rmrf(const_cast<char*>(fsRoot.c_str())); 
+    }
 
     portduinoVFS->mountpoint(fsRoot.c_str());
 

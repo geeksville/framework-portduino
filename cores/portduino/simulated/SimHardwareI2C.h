@@ -41,12 +41,12 @@ public:
   virtual uint8_t endTransmission(void) { return endTransmission(true); }
 
   virtual uint8_t requestFrom(uint8_t address, size_t len, bool stopBit) {
-    notImplemented("requestFrom");
+    // notImplemented("requestFrom");
     return 0;
   }
 
   virtual uint8_t requestFrom(uint8_t address, size_t len) {
-    notImplemented("requestFrom");
+    // notImplemented("requestFrom");
     return 0;
   }
 

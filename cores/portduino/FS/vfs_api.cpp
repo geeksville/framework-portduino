@@ -15,6 +15,10 @@
 #include "vfs_api.h"
 #include "logging.h"
 
+#ifndef ACCESSPERMS
+#define ACCESSPERMS (S_IRWXU|S_IRWXG|S_IRWXO) 
+#endif
+
 using namespace fs;
 
 FileImplPtr VFSImpl::open(const char* path, const char* mode)

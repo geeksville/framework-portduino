@@ -69,6 +69,15 @@ PinStatus digitalRead(pin_size_t pinNumber)
   return r;
 }
 
+unsigned long pulseIn(pin_size_t pinNumber, PinStatus status, unsigned long timeout)
+{
+  auto p = getGPIO(pinNumber);
+  auto r = p->pulseIn(status, timeout);
+
+  // log(SysGPIO, LogDebug, "pulseIn(%d) -> %d", pinNumber, r);
+  return r;
+}
+
 int analogRead(pin_size_t pinNumber)
 {
   auto p = getGPIO(pinNumber);

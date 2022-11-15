@@ -34,6 +34,8 @@ public:
     virtual void analogWrite(int v) = 0;
 
     virtual void setPinMode(PinMode m) = 0;
+    
+    virtual unsigned long pulseIn(PinStatus state, unsigned long timeout) = 0;
 
     virtual void attachInterrupt(voidFuncPtr callback, PinStatus mode) = 0;
 
@@ -111,6 +113,17 @@ public:
     {
         isr = NULL;
         isrPinStatus = -1;
+    }
+
+    virtual unsigned long pulseIn(PinStatus state, unsigned long timeout)
+    {
+        setPinMode(INPUT);
+        uint32_t start = micros();
+        while(readPin() == state && (micros() - start) < timeout);
+        while(readPin() != state && (micros() - start) < timeout);
+        start = micros();
+        while(readPin() == state && (micros() - start) < timeout);
+        return micros() - start;
     }
 
     virtual void setPinMode(PinMode m)

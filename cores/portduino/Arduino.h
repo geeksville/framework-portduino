@@ -1,5 +1,10 @@
 #pragma once
 
+// Casts for Radiolib HAL
+#define RADIOLIB_ARDUINOHAL_PIN_MODE_CAST (PinMode)
+#define RADIOLIB_ARDUINOHAL_PIN_STATUS_CAST (PinStatus)
+#define RADIOLIB_ARDUINOHAL_INTERRUPT_MODE_CAST (PinStatus)
+
 #include "ArduinoAPI.h"
 #include "HardwareSPI.h"
 #include "linux/LinuxSerial.h"

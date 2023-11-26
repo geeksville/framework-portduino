@@ -167,6 +167,10 @@ void LinuxGPIOPin::writePin(PinStatus s) {
 void LinuxGPIOPin::setPinMode(PinMode m) {
   GPIOPin::setPinMode(m);
 
+  // The gpiod call below does not play well with an already claimed GPIO
+  // So we release it first.
+  gpiod_line_release(line);
+
   // Set direction, if output use the current pinstate as the output value
   if (m == OUTPUT) {
     gpiod_line_request_output(line, consumer, readPin());

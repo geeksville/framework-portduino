@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 #include <sys/sysmacros.h>
 #include <dirent.h>
+#include <unistd.h>
 
 const char *consumer = "portduino";
 
@@ -103,12 +104,27 @@ static struct gpiod_chip *chip_open_by_name(const char *name)
  * Try to find the specified linux gpio line, throw exception if not found
  */
 static gpiod_line *getLine(const char *chipLabel, const char *linuxPinName) {
+	struct gpiod_chip *chip;
+	std::string path = "/dev/";
+	path += chipLabel;
+  if (access(path.c_str(), R_OK) == 0) {
+	chip = chip_open_by_name(chipLabel);
+	if (!chip) {
+		throw std::invalid_argument("Error, cannot open GPIO chip");
+	}
+	auto line = gpiod_chip_find_line(chip, linuxPinName);
 
+	struct gpiod_line_request_config request = {
+		consumer, GPIOD_LINE_REQUEST_DIRECTION_AS_IS, 0};
+	auto result = gpiod_line_request(line, &request, 0);
+	if(result != 0) {
+		throw std::invalid_argument("Error, cannot open GPIO chip");
+	}
+	return line;
+  }
   struct dirent **entries;
   int num_chips = scandir("/dev/", &entries, chip_dir_filter, alphasort);
   assert(num_chips > 0); // FIXME, throw exception
-	struct gpiod_chip *chip;
-
   log(SysGPIO, LogDebug, "getLine(%s, %s)", chipLabel, linuxPinName);
   for (int i = 0; i < num_chips; i++) {
     chip = chip_open_by_name(entries[i]->d_name);
@@ -125,7 +141,60 @@ static gpiod_line *getLine(const char *chipLabel, const char *linuxPinName) {
         struct gpiod_line_request_config request = {
             consumer, GPIOD_LINE_REQUEST_DIRECTION_AS_IS, 0};
         auto result = gpiod_line_request(line, &request, 0);
-        assert(result == 0); // fixme throw
+        if(result != 0) {
+		    throw std::invalid_argument("Error, cannot open GPIO chip");
+		}
+        return line;
+      }
+    }
+  }
+  assert(0); // FIXME throw
+}
+
+/**
+ * Try to find the specified linux gpio line, throw exception if not found
+ */
+static gpiod_line *getLine(const char *chipLabel, const int linuxPinNum) {
+	struct gpiod_chip *chip;
+	std::string path = "/dev/";
+	path += chipLabel;
+  if (access(path.c_str(), R_OK) == 0) {
+	chip = chip_open_by_name(chipLabel);
+	if (!chip) {
+		throw std::invalid_argument("Error, cannot open GPIO chip");
+	}
+	auto line = gpiod_chip_get_line(chip, linuxPinNum);
+
+	struct gpiod_line_request_config request = {
+		consumer, GPIOD_LINE_REQUEST_DIRECTION_AS_IS, 0};
+	auto result = gpiod_line_request(line, &request, 0);
+	if(result != 0) {
+		throw std::invalid_argument("Error, cannot open GPIO chip");
+	}
+	return line;
+  }
+  struct dirent **entries;
+  int num_chips = scandir("/dev/", &entries, chip_dir_filter, alphasort);
+  assert(num_chips > 0); // FIXME, throw exception
+  log(SysGPIO, LogDebug, "getLine(%s, %s)", chipLabel, linuxPinNum);
+  for (int i = 0; i < num_chips; i++) {
+    chip = chip_open_by_name(entries[i]->d_name);
+    if (!chip) {
+      if (errno == EACCES)
+        continue; // skip chips we don't have access to
+
+      assert(0); // die_perror("unable to open %s", entries[i]->d_name);
+    } else {
+      auto label = gpiod_chip_label(chip);
+      if (strcmp(label, chipLabel) == 0) {
+        auto line = gpiod_chip_get_line(chip, linuxPinNum);
+
+        struct gpiod_line_request_config request = {
+            consumer, GPIOD_LINE_REQUEST_DIRECTION_AS_IS, 0};
+        auto result = gpiod_line_request(line, &request, 0);
+        if(result != 0) {
+		    throw std::invalid_argument("Error, cannot open GPIO chip");
+		}
         return line;
       }
     }
@@ -141,6 +210,13 @@ LinuxGPIOPin::LinuxGPIOPin(pin_size_t n, const char *chipLabel,
                            const char *portduinoPinName)
     : GPIOPin(n, portduinoPinName ? portduinoPinName : linuxPinName) {
   line = getLine(chipLabel, linuxPinName);
+}
+
+LinuxGPIOPin::LinuxGPIOPin(pin_size_t n, const char *chipLabel,
+                           const int linuxPinNum,
+                           const char *portduinoPinName)
+    : GPIOPin(n, portduinoPinName) {
+  line = getLine(chipLabel, linuxPinNum);
 }
 
 LinuxGPIOPin::~LinuxGPIOPin() { 

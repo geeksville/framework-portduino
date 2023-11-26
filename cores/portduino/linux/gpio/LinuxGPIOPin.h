@@ -29,6 +29,7 @@ public:
     * Create a pin given a linux chip label and pin name
     */
   LinuxGPIOPin(pin_size_t n, const char *chipLabel, const char *linuxPinName, const char *portduinoPinName = NULL);
+  LinuxGPIOPin(pin_size_t n, const char *chipLabel, const int linuxPinNum, const char *portduinoPinName);
 
   /**
    * Constructor

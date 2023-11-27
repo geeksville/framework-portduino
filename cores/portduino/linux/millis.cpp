@@ -6,12 +6,16 @@
 #include <stdio.h>
 #include <stdint.h>
 
+static unsigned long startUsec;
+
 extern "C" unsigned long micros(void) {
   struct timeval te;
   gettimeofday(&te, NULL);                                  // get current time
-  unsigned long usecs = te.tv_sec * 1000000LL + te.tv_usec; // calculate
-  // printf("usecs %lu\n", usecs);
-  return usecs;
+  unsigned long long  usecs = te.tv_sec * 1000000LL + te.tv_usec; // calculate
+  if (startUsec == 0)
+    startUsec = usecs;
+
+  return usecs - startUsec;
 }
 
 static unsigned long startMsec;

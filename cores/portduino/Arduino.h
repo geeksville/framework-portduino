@@ -8,7 +8,7 @@
 #include "ArduinoAPI.h"
 #include "HardwareSPI.h"
 #include "linux/LinuxSerial.h"
-#include "simulated/SimHardwareI2C.h"
+#include "linux/LinuxHardwareI2C.h"
 #include <argp.h>
 
 extern HardwareSPI SPI;

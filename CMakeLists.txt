@@ -61,4 +61,6 @@ add_executable(Portduino
        	cores/portduino/simulated/SimHardwareI2C.h
        	cores/portduino/linux/LinuxCommon.cpp
        	cores/portduino/linux/LinuxSerial.cpp
-       	cores/portduino/linux/LinuxSerial.h)
+        cores/portduino/linux/LinuxSerial.h
+        cores/portduino/linux/LinuxHardwareI2C.cpp
+       	cores/portduino/linux/LinuxHardwareI2C.h)

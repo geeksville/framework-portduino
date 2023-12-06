@@ -19,7 +19,7 @@ public:
   LinuxSPIChip(const char *name = "/dev/spidev0.0") : PosixFile(name) {
     uint8_t mode = SPI_MODE_0;
     uint8_t lsb = false;
-    uint8_t speed = 2000000;
+    uint32_t speed = 2000000;
     int status = ioctl(SPI_IOC_WR_MODE, &mode);
     assert(status >= 0);
     status = ioctl(SPI_IOC_WR_LSB_FIRST, &lsb);

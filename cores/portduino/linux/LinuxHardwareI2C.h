@@ -60,6 +60,11 @@ public:
 
   virtual int read();
 
+  virtual uint8_t readBytes(uint8_t address, size_t len, bool stopBit) {
+    notImplemented("requestFrom");
+    return 0;
+  }
+
   virtual int peek() {
     notImplemented("i2cpeek");
     return -1;

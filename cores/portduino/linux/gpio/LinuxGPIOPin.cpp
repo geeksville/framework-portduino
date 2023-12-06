@@ -234,6 +234,9 @@ PinStatus LinuxGPIOPin::readPinHardware() {
 }
 
 void LinuxGPIOPin::writePin(PinStatus s) {
+  // some libraries have been observed failing to set the pin mode to output.
+  if (GPIOPin::getPinMode() != OUTPUT)
+	setPinMode(OUTPUT);
   GPIOPin::writePin(s); // update status
 
   int res = gpiod_line_set_value(line, s);

@@ -52,7 +52,6 @@ public:
     */
 
     memset(&xfer, 0, sizeof xfer);
-    memset(inBuf, 0x55, bufLen);
 
     xfer.tx_buf = (unsigned long)outBuf;
     xfer.len = bufLen;

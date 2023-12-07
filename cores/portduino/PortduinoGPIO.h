@@ -133,6 +133,11 @@ public:
             log(SysGPIO, LogInfo, "setPinMode(%s, %d, %d)", getName(), getPinNum(), m);
     }
 
+    virtual PinMode getPinMode()
+    {
+        return mode;
+    }
+
     /** CALLED ONLY BY PORTDUINO special thread
      * If this pin has an ISR attached, poll it and call the ISR if necessary
      */

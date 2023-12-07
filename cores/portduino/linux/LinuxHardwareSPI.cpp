@@ -19,7 +19,7 @@ public:
   LinuxSPIChip(const char *name = "/dev/spidev0.0") : PosixFile(name) {
     uint8_t mode = SPI_MODE_0;
     uint8_t lsb = false;
-    uint8_t speed = 2000000;
+    uint32_t speed = 2000000;
     int status = ioctl(SPI_IOC_WR_MODE, &mode);
     assert(status >= 0);
     status = ioctl(SPI_IOC_WR_LSB_FIRST, &lsb);
@@ -52,7 +52,6 @@ public:
     */
 
     memset(&xfer, 0, sizeof xfer);
-    memset(inBuf, 0x55, bufLen);
 
     xfer.tx_buf = (unsigned long)outBuf;
     xfer.len = bufLen;
@@ -101,11 +100,7 @@ uint16_t HardwareSPI::transfer16(uint16_t data) {
 // In fact - switch the API to the nrf52/esp32 arduino version that takes both
 // an inbuf and an outbuf;
 void HardwareSPI::transfer(void *buf, size_t count) {
-  notImplemented(
-      "spi general transfer"); // I don't think anyone is using this yet
-  assert(spiChip);
-  assert(0);
-  // spiChip->transfer(buf, buf, count);
+  spiChip->transfer((uint8_t *) buf, (uint8_t *) buf, count);
 }
 
 // Transaction Functions

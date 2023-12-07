@@ -6,6 +6,14 @@
 #define RADIOLIB_ARDUINOHAL_INTERRUPT_MODE_CAST (PinStatus)
 
 #include "ArduinoAPI.h"
+#include <argp.h>
+#if defined(__AVR__)
+#include "avr/pgmspace.h"
+#else
+#include "deprecated-avr-comp/avr/pgmspace.h"
+#endif
+#ifdef __cplusplus
+
 #include "HardwareSPI.h"
 #include "linux/LinuxSerial.h"
 #include "linux/LinuxHardwareI2C.h"
@@ -44,3 +52,4 @@ void portduinoAddArguments(const struct argp_child &child, void *childArguments)
  * This value can be customized with the --macaddr parameter and it defaults to 00:00:00:00:00:01
  */
 void getMacAddr(uint8_t *dmac);
+#endif

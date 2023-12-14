@@ -52,4 +52,5 @@ void portduinoAddArguments(const struct argp_child &child, void *childArguments)
  * This value can be customized with the --macaddr parameter and it defaults to 00:00:00:00:00:01
  */
 void getMacAddr(uint8_t *dmac);
+void reboot();
 #endif
